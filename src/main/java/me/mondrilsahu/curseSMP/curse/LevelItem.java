@@ -34,7 +34,7 @@ public class LevelItem {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("\u00a7b\u00a7lCurse Level Orb");
         meta.setLore(Arrays.asList("\u00a77Right-click to gain +1 level", "\u00a78Max Level: 3", "", "\u00a7dCondensed cursed energy"));
-        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, (Object)1);
+        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, 1);
         item.setItemMeta(meta);
         return item;
     }

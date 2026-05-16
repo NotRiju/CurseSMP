@@ -3,11 +3,11 @@ plugins {
 }
 
 group 'me.mondrilsahu'
-version '1.0.0'
+version '1.2.5'
 
 repositories {
     mavenCentral()
-    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
 }
 
 dependencies {
@@ -26,5 +26,5 @@ sourceSets {
 }
 
 jar {
-    archiveBaseName.set('CurseSMP-clean')
+    archiveBaseName.set('CurseSMP')
 }

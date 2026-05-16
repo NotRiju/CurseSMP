@@ -28,7 +28,7 @@ public class WitherHeart {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("\u00a78\u00a7lWither Heart");
         meta.setLore(Arrays.asList("\u00a77Right-click to obtain", "\u00a78Wither Curse", "", "\u00a78Earned by slaying 5 Withers"));
-        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, (Object)1);
+        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, 1);
         item.setItemMeta(meta);
         return item;
     }

@@ -70,7 +70,7 @@ public class CircleParticle {
                     x = Math.cos(a) * radius;
                     z = Math.sin(a) * radius;
                     for (double y = 0.0; y <= 5.0; y += 0.3) {
-                        loc.getWorld().spawnParticle(Particle.DUST, loc.clone().add(x, y, z), 2, (Object)new Particle.DustOptions(color, 1.4f));
+                        loc.getWorld().spawnParticle(Particle.REDSTONE, loc.clone().add(x, y, z), 2, (Object)new Particle.DustOptions(color, 1.4f));
                     }
                 }
                 Location head = p.getLocation().clone().add(0.0, 6.0, 0.0);
@@ -98,7 +98,7 @@ public class CircleParticle {
     }
 
     private static void particle(Location loc, double x, double z, Color color, float size) {
-        loc.getWorld().spawnParticle(Particle.DUST, loc.clone().add(x, 0.0, z), 1, (Object)new Particle.DustOptions(color, size));
+        loc.getWorld().spawnParticle(Particle.REDSTONE, loc.clone().add(x, 0.0, z), 1, (Object)new Particle.DustOptions(color, size));
     }
 
     private static void line(Location a, Location b, Color color) {
@@ -109,7 +109,7 @@ public class CircleParticle {
             double x = a.getX() + (b.getX() - a.getX()) * t;
             double y = a.getY() + (b.getY() - a.getY()) * t;
             double z = a.getZ() + (b.getZ() - a.getZ()) * t;
-            a.getWorld().spawnParticle(Particle.DUST, new Location(a.getWorld(), x, y, z), 1, (Object)new Particle.DustOptions(color, 1.2f));
+            a.getWorld().spawnParticle(Particle.REDSTONE, new Location(a.getWorld(), x, y, z), 1, (Object)new Particle.DustOptions(color, 1.2f));
         }
     }
 }

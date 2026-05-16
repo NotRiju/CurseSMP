@@ -1,17 +1,4 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  org.bukkit.Bukkit
- *  org.bukkit.Material
- *  org.bukkit.NamespacedKey
- *  org.bukkit.inventory.ItemStack
- *  org.bukkit.inventory.Recipe
- *  org.bukkit.inventory.ShapedRecipe
- *  org.bukkit.inventory.meta.ItemMeta
- *  org.bukkit.persistence.PersistentDataType
- *  org.bukkit.plugin.Plugin
- */
+
 package me.mondrilsahu.curseSMP.curse;
 
 import java.util.Arrays;
@@ -34,7 +21,7 @@ public class RerollBook {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("\u00a75\u00a7lCurse Reroll Tome");
         meta.setLore(Arrays.asList("\u00a77Right-click to reroll your curse", "\u00a78Consumes on use", "", "\u00a7dForged with forbidden magic"));
-        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, (Object)1);
+        meta.getPersistentDataContainer().set(KEY, PersistentDataType.INTEGER, 1);
         item.setItemMeta(meta);
         return item;
     }
