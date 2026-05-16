@@ -173,7 +173,11 @@ TabCompleter {
                 int level = CurseManager.getLevel(p);
                 p.sendMessage("\u00a75Your Curse: \u00a7d" + this.format(type));
                 p.sendMessage("\u00a77Level: \u00a7e" + level);
-                p.sendMessage("\u00a77Ability: \u00a7fComing soon...");
+                p.sendMessage("\u00a75--- Passive Effects ---");
+                p.sendMessage(this.getPassiveDescription(type, level));
+                p.sendMessage("\u00a75--- Active Ability ---");
+                p.sendMessage(this.getActiveDescription(type, level));
+                p.sendMessage("\u00a7dTrigger: \u00a7fEmpty Hand Right-Click or Shift + Left-Click");
                 return true;
             }
             case "on": {
@@ -341,6 +345,44 @@ TabCompleter {
 
     private String format(CurseType c) {
         return c.name().charAt(0) + c.name().substring(1).toLowerCase();
+    }
+
+    private String getPassiveDescription(CurseType type, int level) {
+        switch (type) {
+            case FIRE: return "\u00a76Fire Immunity\u00a7f: You are immune to all fire and lava damage.";
+            case VOID: return "\u00a75End Aura\u00a7f: Surrounded by particle trails of the End.";
+            case STORM: return "\u00a7bSwift Torrent\u00a7f: Passive Speed " + (level == 1 ? "I" : level == 2 ? "II" : "III") + " while in rain or water.";
+            case SHADOW: return "\u00a78Vanish\u00a7f: Passive invisibility during the night.";
+            case BLOOD: return "\u00a7cRage & Lifesteal\u00a7f: Heal on hit (" + (8 * level) + "% damage). Gains Strength and Speed when below 4 hearts.";
+            case FREEZE: return "\u00a7bFrost aura\u00a7f: Surrounded by a freezing frost field.";
+            case WIND: return "\u00a7aDouble Jump\u00a7f: Double-tap spacebar to glide and jump in mid-air.";
+            case DEMON: return "\u00a7dDemonic Strength\u00a7f: Permanent Strength " + (level >= 3 ? "II" : "I") + " boost.";
+            case NATURE: return "\u00a72Regeneration\u00a7f: Passive health regeneration (" + (0.2 * level) + " HP/sec).";
+            case DEATH: return "\u00a77Undying Soul\u00a7f: Defy death on fatal damage, instantly healing to full. Cooldown: " + (7 - level) + "m.";
+            case DEEP_SEA_CREATURE: return "\u00a71Abyssal Swim\u00a7f: Permanent Water Breathing and Dolphin's Grace swimming speed boost.";
+            case ENDER_DRAGON: return "\u00a75Dragon Flight\u00a7f: Absolute immunity to all fall damage.";
+            case WITHER: return "\u00a78Decay Immunity\u00a7f: Absolute immunity to the Wither decay effect.";
+            default: return "\u00a77No passive effects.";
+        }
+    }
+
+    private String getActiveDescription(CurseType type, int level) {
+        switch (type) {
+            case FIRE: return "\u00a76Fire Burst\u00a7f: Unleash a ring of flames, damaging and burning nearby targets.";
+            case VOID: return "\u00a75Void Teleport\u00a7f: Teleport " + (6 * level) + " blocks forward in your looking direction.";
+            case STORM: return "\u00a7bThunderbolt\u00a7f: Strike lightning at the targeted block or entity.";
+            case SHADOW: return "\u00a78Shadow Step\u00a7f: Teleport behind the nearest entity, gaining a Strength boost.";
+            case BLOOD: return "\u00a7cBlood Burst\u00a7f: Drain " + (2.0 + 1.5 * level) + " HP from all surrounding entities to heal yourself.";
+            case FREEZE: return "\u00a73Glacial Prison\u00a7f: Encase all nearby entities in physical ice blocks for " + (2 * level + 2) + " seconds.";
+            case WIND: return "\u00a7aWind Dash\u00a7f: Launch yourself rapidly forward in your looking direction.";
+            case DEMON: return "\u00a7dDemon Rage\u00a7f: Enter a demon rage for " + (5 + 2 * level) + " seconds, gaining Strength, Speed, and Resistance.";
+            case NATURE: return "\u00a72Entangling Vines\u00a7f: Trap nearby enemies with Slowness and Poison.";
+            case DEATH: return "\u00a77Wither Skull\u00a7f: Fire an explosive Wither skull that inflicts the Wither status.";
+            case DEEP_SEA_CREATURE: return "\u00a71Sonic Boom\u00a7f: Fire a heavy Warden sonic boom, gaining Strength III & Resistance IV for 10s.";
+            case ENDER_DRAGON: return "\u00a75Dragon's Breath\u00a7f: Emit a toxic cone of purple breath while pulling nearby entities to you.";
+            case WITHER: return "\u00a78Wither Barrage\u00a7f: Launch a spread of 3 Wither skulls and wither surrounding targets.";
+            default: return "\u00a77No active abilities.";
+        }
     }
 }
 

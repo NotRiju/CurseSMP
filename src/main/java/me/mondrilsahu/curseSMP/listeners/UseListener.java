@@ -76,10 +76,9 @@ implements Listener {
                 p.sendMessage("\u00a7cThis legendary curse is already taken.");
                 return;
             }
-            Bukkit.dispatchCommand((CommandSender)Bukkit.getConsoleSender(), (String)("curse remove " + p.getName()));
+            CurseManager.remove(p);
             CurseManager.setCurse(p, CurseType.DEEP_SEA_CREATURE);
             p.sendMessage("\u00a71You have been bound to the Deep Sea Creature Curse!");
-            CurseManager.setCurse(p, CurseType.DEEP_SEA_CREATURE);
             CurseManager.setObtained(CurseType.DEEP_SEA_CREATURE);
             LegendaryAnimation.play("Deep Sea Creature", p.getName());
             this.consume(item, p);
@@ -90,10 +89,9 @@ implements Listener {
                 p.sendMessage("\u00a7cThis legendary curse is already taken.");
                 return;
             }
-            Bukkit.dispatchCommand((CommandSender)Bukkit.getConsoleSender(), (String)("curse remove " + p.getName()));
+            CurseManager.remove(p);
             CurseManager.setCurse(p, CurseType.ENDER_DRAGON);
             p.sendMessage("\u00a75You obtained the Ender Dragon Curse!");
-            CurseManager.setCurse(p, CurseType.ENDER_DRAGON);
             CurseManager.setObtained(CurseType.ENDER_DRAGON);
             LegendaryAnimation.play("Ender Dragon Curse", p.getName());
             this.consume(item, p);
@@ -104,10 +102,9 @@ implements Listener {
                 p.sendMessage("\u00a7cThis legendary curse is already taken.");
                 return;
             }
-            Bukkit.dispatchCommand((CommandSender)Bukkit.getConsoleSender(), (String)("curse remove " + p.getName()));
+            CurseManager.remove(p);
             CurseManager.setCurse(p, CurseType.WITHER);
             p.sendMessage("\u00a78You obtained the Wither Curse!");
-            CurseManager.setCurse(p, CurseType.WITHER);
             CurseManager.setObtained(CurseType.WITHER);
             LegendaryAnimation.play("Wither Curse", p.getName());
             this.consume(item, p);

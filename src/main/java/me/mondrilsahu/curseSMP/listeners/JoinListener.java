@@ -51,6 +51,7 @@ implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         CurseManager.savePlayer(e.getPlayer());
+        CurseManager.unload(e.getPlayer());
     }
 }
 

@@ -192,6 +192,10 @@ public class CurseManager {
         CurseManager.save();
     }
 
+    public static void unload(Player p) {
+        map.remove(p.getUniqueId());
+    }
+
     public static boolean has(Player p) {
         return map.containsKey(p.getUniqueId());
     }

@@ -1,0 +1,5 @@
+enabled: true
+obtainable:
+  warden: true
+  dragon: true
+  wither: true
