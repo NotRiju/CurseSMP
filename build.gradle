@@ -2,6 +2,12 @@ plugins {
     id 'java'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 group 'me.mondrilsahu'
 version '1.2.9'
 
@@ -27,4 +33,8 @@ sourceSets {
 
 jar {
     archiveBaseName.set('CurseSMP')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release.set(21)
 }
