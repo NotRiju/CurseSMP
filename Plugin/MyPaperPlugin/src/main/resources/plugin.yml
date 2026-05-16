@@ -1,0 +1,10 @@
+name: CurseSMP
+main: me.mondrilsahu.curseSMP.CurseSMP
+version: 1.1
+api-version: '1.21.11'
+
+commands:
+  curse:
+    description: Main curse command
+  curseguide:
+    description: Opens curse guide GUI
