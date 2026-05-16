@@ -8,4 +8,4 @@ To build:
 ./gradlew build
 ```
 
-Resulting jar: `build/libs/CurseSMP-clean-1.0.0.jar`
+Resulting jar: `build/libs/CurseSMP-1.2.5.jar`
