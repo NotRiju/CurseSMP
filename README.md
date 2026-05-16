@@ -5,8 +5,7 @@ This folder contains a prepared Gradle project with decompiled sources copied fr
 To build:
 
 ```bash
-cd server/plugins/CurseSMP-clean
 ./gradlew build
 ```
 
-Resulting jar: `build/libs/CurseSMP-clean-1.0.0.jar`
+Resulting jar: `build/libs/CurseSMP.jar`
